@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4 id="quote"></h4>
+    <button id="btn">Next</button>
+    <!-- <button id="stop">stop</button> -->
+
+
+    <script type="text/javascript">
+
+        let btn = document.getElementById('btn');
+        // let t = document.getElementById('time');
+        let quote = document.getElementById('quote');
+
+        // btn.addEventListener('click',()=>{
+        //      m = setInterval(()=>{ let d = new Date(); t.innerHTML = d.toLocaleTimeString();},1000)
+            
+        // })
+
+        // let stopBtn = document.getElementById('stop');
+
+        // stopBtn.addEventListener('click',()=>{
+        //    clearInterval(m);
+            
+        // })
+
+        let info = [
+            "Somanath is Kingmaker",
+            "Somanath the Developer",
+            "Somanath is Brilliant",
+            "Somanath the chocolate boy",
+            "Somanath is professional swimmer",
+            "No one can beat Somanath",
+            "Every girl like Somanath",
+            "King of the King Somanath",
+            "Somanath the Fullstack",
+            "No pain No gain - Somanath"
+        ]
+
+        quoteFn  = ()=>{
+                setTimeout(() => {
+                    quote.innerHTML = info[Math.floor(Math.random()*10)];
+                }, 1000);
+            }
+
+        btn.addEventListener('click',quoteFn)
+        quoteFn();
+
+
+
+    </script>
+</body>
+</html>
