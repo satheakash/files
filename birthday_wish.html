@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: indianred;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        div#quotewrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        h3 {
+            animation: hightlight 3s infinite;
+        }
+
+        @keyframes hightlight {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.2);
+            }
+        }
+
+        #quote {
+            font-style: italic;
+            color: #000;
+        }
+
+        #next {
+            padding: 8px 17px;
+            background-color: transparent;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="quotewrapper">
+        <h3>Happy birthday!</h3>
+        <p>तूच <span id="quote"></span> आहेस.</p>
+        <button id="next">Next</button>
+    </div>
+
+    <script>
+        let quotes = [
+            'प्रेम',
+            'दया',
+            'शांती',
+            'सुविचार',
+            'क्षमा',
+            'आनंद',
+            'जीवन',
+            'स्वाभिमान',
+            'सुंदर',
+            'साक्षात्कार',
+            'विश्वास',
+            'क्रांती'
+
+        ]
+
+        let next = document.getElementById('next');
+        let quote = document.getElementById('quote');
+        let i = 0;
+        nextquote = () => {
+            setTimeout(() => {
+                quote.innerHTML = quotes[i];
+                i++;
+                if (i == quotes.length) {
+                    i = 0;
+                }
+            }, 1000);
+        }
+
+        next.addEventListener('click', nextquote);
+        nextquote();
+    </script>
+</body>
+
+</html>
